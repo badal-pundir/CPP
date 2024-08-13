@@ -8,6 +8,7 @@ struct Node
     int data;
     Node* next;
     Node(int data_param, Node* p_next_param) : data(data_param), next(p_next_param){};
+    Node(int data_param) : data(data_param), next(NULL){};
 };
 
 void convertArr2LL(Node*& head, vector<int>& arr) {
@@ -29,12 +30,12 @@ void printList(Node* head) {
     }
 }
 
-Node* add_twoLL(Node* head1, Node* head2) {
+Node* add_twoLL_MywWay(Node* head1, Node* head2) {
     Node* ans = nullptr;
     Node* temp1 = head1;
     Node* temp2 = head2;
     Node* temp3 = ans;
-    int rem = 0;
+    int rem = 0; // carry
     int sum = 0;
     while(temp1!= nullptr && temp2 != nullptr) {
         sum = temp2->data + temp1 -> data + rem;
@@ -44,7 +45,7 @@ Node* add_twoLL(Node* head1, Node* head2) {
         if(temp3 == nullptr){ 
             ans = resNode;
             temp3 = resNode;
-            }
+        }
         else {
             temp3 -> next =  resNode;
             temp3 = resNode;
@@ -53,6 +54,7 @@ Node* add_twoLL(Node* head1, Node* head2) {
         temp2 = temp2 -> next;  
 
     }
+
 
     while(temp1!= nullptr) {
         sum = temp1->data + rem;
@@ -88,8 +90,34 @@ Node* add_twoLL(Node* head1, Node* head2) {
     return ans;
 
 }
+
+Node* striver_add(Node* head1, Node* head2) {
+    Node* dummyNode = new Node(-1);
+    Node* curr = dummyNode;
+    Node* temp1 = head1;
+    Node* temp2 = head2;
+    int carry = 0;
+
+    while(temp1!=NULL || temp2!=NULL) {
+        int sum = carry;
+        if(temp1) sum += temp1 -> data;
+        if(temp2) sum += temp2 -> data;
+        Node* newNode = new Node(sum % 10);
+        carry = sum / 10;
+        curr -> next = newNode;
+        curr = curr -> next;
+        if(temp1) temp1 = temp1 -> next;
+        if(temp2) temp2 = temp2 -> next;
+    }
+    if(carry) {
+        Node* newNode = new Node(carry);
+        curr -> next = newNode;
+    }
+    return dummyNode -> next;
+}
+
 int main() {
-    vector<int> arr1 = {3, 5, 5};
+    vector<int> arr1 = {3, 5, 5, 5};
     vector<int> arr2 = {4, 5};
     Node* head1 = nullptr;
     Node* head2 = nullptr;
@@ -100,7 +128,8 @@ int main() {
     cout<<endl;
     cout<<"Link List2:";
     printList(head2);
-    Node* ans = add_twoLL(head1, head2);
+    // Node* ans = add_twoLL_MywWay(head1, head2);
+    Node* ans = striver_add(head1, head2);
     cout<<"\nAddition : ";
     printList(ans);    
     return 0;
