@@ -30,26 +30,49 @@ void printList(Node* head) {
 
 Node* odd_even_LL(Node* &head) {
 
-    vector<int> oddEven;
-    Node* temp = head;  
-    int i = 2;
-    while(i-- > 0) {
-    while(temp != nullptr ){//&& temp -> next != nullptr) {
-        oddEven.push_back(temp->data);
-        if(temp -> next == nullptr || temp -> next -> next == nullptr)break;
-        temp = temp -> next -> next;
+    // vector<int> oddEven;
+    // Node* temp = head;  
+    // int i = 2;
+    // while(i-- > 0) {
+    // while(temp != nullptr ){//&& temp -> next != nullptr) {
+    //     oddEven.push_back(temp->data);
+    //     if(temp -> next == nullptr || temp -> next -> next == nullptr)break;
+    //     temp = temp -> next -> next;
     
-    }
-    // if(temp) oddEven.push_back(temp -> data);
-    temp = head -> next;
-    }
-    Node* mover = head;
+    // }
+    // // if(temp) oddEven.push_back(temp -> data);
+    // temp = head -> next;
+    // }
+    // Node* mover = head;
     
-    int k = 0;
-    while(mover != nullptr) {
-        mover -> data = oddEven[k++];
-        mover = mover -> next;
+    // int k = 0;
+    // while(mover != nullptr) {
+    //     mover -> data = oddEven[k++];
+    //     mover = mover -> next;
+    // }
+
+    Node* temp1 = head;
+    Node* temp2 = head -> next;
+    while(temp1 != nullptr) {
+        if(temp1 -> next -> next == nullptr){
+            temp1 -> next = temp1 -> next -> next;
+            break;
+        }
+        if(temp1 -> next == nullptr){
+            break;
+        }
     }
+    temp1 -> next = temp2;
+    while(temp2 != nullptr) {
+        if(temp2 -> next -> next == nullptr){
+            temp2 -> next = temp2 -> next -> next;
+            break;
+        }
+        if(temp2 -> next == nullptr){
+            break;
+        }
+    }
+    temp2 -> next = nullptr;
     return head;
 
     
