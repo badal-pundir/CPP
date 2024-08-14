@@ -51,28 +51,23 @@ Node* odd_even_LL(Node* &head) {
     //     mover = mover -> next;
     // }
 
-    Node* temp1 = head;
-    Node* temp2 = head -> next;
-    while(temp1 != nullptr) {
-        if(temp1 -> next -> next == nullptr){
-            temp1 -> next = temp1 -> next -> next;
-            break;
-        }
-        if(temp1 -> next == nullptr){
-            break;
-        }
+    Node* odd = head;
+    Node* even = head -> next;
+    Node* evenHead = head -> next;
+    
+    while(
+        (even != nullptr && even -> next != nullptr) && 
+        (odd != nullptr && odd -> next != nullptr)
+        ) {
+        odd -> next = odd -> next -> next;
+        odd = odd -> next;
+
+        even -> next = even -> next -> next;
+        even = even -> next;
     }
-    temp1 -> next = temp2;
-    while(temp2 != nullptr) {
-        if(temp2 -> next -> next == nullptr){
-            temp2 -> next = temp2 -> next -> next;
-            break;
-        }
-        if(temp2 -> next == nullptr){
-            break;
-        }
-    }
-    temp2 -> next = nullptr;
+
+    odd -> next = evenHead;
+    even -> next = nullptr;
     return head;
 
     
@@ -82,6 +77,7 @@ int main() {
     
     Node* head = nullptr;
     convertArr2LL(head, arr);
+    cout<<"Original Linked List: ";
     printList(head);
 
     Node* ans = odd_even_LL(head);
