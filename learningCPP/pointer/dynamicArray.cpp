@@ -14,7 +14,7 @@ int main()
     {
         for (size_t i{0}; i < size; i++)
         {
-            cout << i << " value : " << p_scores[i] << " : " << *(p_scores + i) << endl;
+            cout << i << " dataue : " << p_scores[i] << " : " << *(p_scores + i) << endl;
         }
     }
 

@@ -2,9 +2,9 @@
 using namespace std;
 
 int main() {
-//     int value1 {10};
-//     signed int value2 {30};
-//     unsigned int value3 {10};
+//     int dataue1 {10};
+//     signed int dataue2 {30};
+//     unsigned int dataue3 {10};
 // //  2 bytes
 //     short short_var {-32768};
 //     short int short_int {455};
@@ -29,16 +29,16 @@ int main() {
 //     signed long long int signed_long_long_int{1234};
 //     unsigned long long int unsigned_long_long_int{1234};
 
-    // cout << "int value1 value: "<< value1 << endl;
-    // cout << "sizeof(int): "<< value2 << endl;
+    // cout << "int dataue1 dataue: "<< dataue1 << endl;
+    // cout << "sizeof(int): "<< dataue2 << endl;
 
-    // cout << "int value1 value: " << sizeof(value1) << endl;
-    // cout << "sizeof(signed int): " << sizeof(value1) << endl;
+    // cout << "int dataue1 dataue: " << sizeof(dataue1) << endl;
+    // cout << "sizeof(signed int): " << sizeof(dataue1) << endl;
 
-    // // unsigned int value4 {-30}; // compiler error.
+    // // unsigned int dataue4 {-30}; // compiler error.
 
-    // cout << "unsigned int value3 value: "<< value3 << endl;
-    // cout << "sizeof(unsigned int): " << sizeof(value3) << endl;
+    // cout << "unsigned int dataue3 dataue: "<< dataue3 << endl;
+    // cout << "sizeof(unsigned int): " << sizeof(dataue3) << endl;
    
 
 

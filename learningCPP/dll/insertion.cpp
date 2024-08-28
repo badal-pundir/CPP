@@ -35,15 +35,15 @@ void printdll(Node* head) {
     
 }
 // insert before pos/
-void insertBeforeKth(Node*& head, int val, int pos) {
+void insertBeforeKth(Node*& head, int data, int pos) {
     if(pos == 1){
-        Node* newNode = new Node(val,head,nullptr);
+        Node* newNode = new Node(data,head,nullptr);
         head -> back = newNode;
         head = newNode;
         return;
     }
     int count = 1;
-    // Node* newNode = new Node(val);
+    // Node* newNode = new Node(data);
     Node* mover = head;
     while(mover != nullptr) {
         count++;
@@ -55,7 +55,7 @@ void insertBeforeKth(Node*& head, int val, int pos) {
         return;
     }
     Node* prev = mover -> back;
-    Node* newNode = new Node(val, mover, prev);
+    Node* newNode = new Node(data, mover, prev);
     prev -> next = newNode;
     newNode -> back = prev;
     newNode -> next = mover;

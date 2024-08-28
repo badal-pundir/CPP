@@ -23,11 +23,11 @@ void convertArr2LL(Node*& head, vector<int>& arr) {
     }
 }
 
-int checkIfPresent(Node* head, int val) {
+int checkIfPresent(Node* head, int data) {
     Node* temp = head;
     int index = 0;
     while(temp) {
-        if(temp -> data == val) return index;
+        if(temp -> data == data) return index;
         index++;
         temp = temp -> next;
     }
@@ -40,12 +40,12 @@ int main() {
     
     Node* head = nullptr;
     convertArr2LL(head, arr);
-    int val = 10;
-    int res  = checkIfPresent(head, val);
+    int data = 10;
+    int res  = checkIfPresent(head, data);
     if(res == -1) {
-        cout<< val << " is not present in the linked list";
+        cout<< data << " is not present in the linked list";
     }
     else 
-    cout<< val << " is present in the linked list at index: "<< res;
+    cout<< data << " is present in the linked list at index: "<< res;
     return 0;
 }

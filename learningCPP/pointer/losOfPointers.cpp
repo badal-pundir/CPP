@@ -40,13 +40,13 @@ int main()
 
     p_number = new int();
     *p_number = 23;   // OR p_number = new int(23) would have worked same
-    if (p_number) // --> equavalent if(!(p_number == nullptr))
+    if (p_number) // --> equadataent if(!(p_number == nullptr))
     {
-        cout << "p_number points to a VALID address: " << p_number <<" value: "<< *p_number<< endl;
+        cout << "p_number points to a dataID address: " << p_number <<" dataue: "<< *p_number<< endl;
     }
     else
     {
-        cout << "p_number pints to an INVALID address." << endl;
+        cout << "p_number pints to an INdataID address." << endl;
     }
 
     delete p_number;

@@ -21,11 +21,11 @@ void convertArr2LL(Node*& head, vector<int>& arr) {
     }
 }
 
-void insertAfterValue(Node*& head, int el, int val) {
+void insertAfterdataue(Node*& head, int el, int data) {
     if(head == NULL) {
         return;
     }
-    if(head -> data == val) {
+    if(head -> data == data) {
         Node* temp = new Node(el, nullptr); // it will be the last node;
         head -> next = temp;
         return;
@@ -34,19 +34,19 @@ void insertAfterValue(Node*& head, int el, int val) {
     Node* temp = head;
 
     while(temp -> next != NULL) {
-        if(temp -> data == val) {
+        if(temp -> data == data) {
             Node* x = new Node(el,temp -> next);
             temp -> next = x;
             break;
         }
         temp = temp -> next;
     }
-    if(temp -> data == val) { // if value is at last node.
+    if(temp -> data == data) { // if dataue is at last node.
         Node* x = new Node(el, nullptr);
         temp -> next = x;
         return;
     }
-    cout<<"entered value is not in the list";
+    cout<<"entered dataue is not in the list";
 }
 
 void printList(Node* head) {
@@ -65,8 +65,8 @@ int main() {
     cout<< "Before: ";
     printList(head);
     cout<< "\nAfter inserting 4 after 3: ";
-    // insert element 4 after value 3.
-    insertAfterValue(head, 4, 5);
+    // insert element 4 after dataue 3.
+    insertAfterdataue(head, 4, 5);
     printList(head);
 
 

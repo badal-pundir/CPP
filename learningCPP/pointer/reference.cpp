@@ -10,14 +10,14 @@ int main()
     cout<<"&a: "<<&a<<" &ref: "<<&ref<<endl;
     cout<<"a: "<<a<<" ref: "<<ref<<endl;
 
-    ref = b;  // equvalent to a = b; changing are done in the same data
+    ref = b;  // equdataent to a = b; changing are done in the same data
     cout<<"========================================="<<endl;
     cout<<"AFTER reassigning ref to b:"<<endl;
     cout<<&b<< " "<<&a<<endl;
-    cout<<"value of b: " << b<<endl;
-    cout<<"value of a: "<< a<<endl;
-    cout<<"value of &a and &b and &ref "<<&b<< " "<<&a<<" "<<&ref<<endl;
-    cout<<"value of a, b, ref: "<<a<<" "<<b<<" "<<ref<<endl;
+    cout<<"dataue of b: " << b<<endl;
+    cout<<"dataue of a: "<< a<<endl;
+    cout<<"dataue of &a and &b and &ref "<<&b<< " "<<&a<<" "<<&ref<<endl;
+    cout<<"dataue of a, b, ref: "<<a<<" "<<b<<" "<<ref<<endl;
     return 0;
 }
 /*

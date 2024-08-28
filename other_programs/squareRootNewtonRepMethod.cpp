@@ -15,8 +15,8 @@ class NewtonSQRT {
                 root = 0.5 * (x + (n/x));  
                 /*we are trying to minimize the error:
                 |root - error| should be < precission 
-                here precissionvalue is 0.4
-                we can take even more precise value like 0.3, 0.2, 0.1.
+                here precissiondataue is 0.4
+                we can take even more precise dataue like 0.3, 0.2, 0.1.
                 */
                 if(abs(root - x) < 0.4) {
                     break;

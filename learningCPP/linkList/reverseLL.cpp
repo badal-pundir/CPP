@@ -71,10 +71,10 @@ void reverseList(Node*& head) {
       // Pop all the nodes and append to the linked list
     while (!s.empty()) {
           
-        // append the top value of stack in list
+        // append the top dataue of stack in list
         temp->next = s.top();
         
-          // Pop the value from stack
+          // Pop the dataue from stack
         s.pop();
         
           // move to the next node in the list
