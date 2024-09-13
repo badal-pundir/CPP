@@ -72,7 +72,7 @@ int main(){
         case 4:
             if (b==0)
             {
-                cout<< "Indataid Input! Numinator can't be zero."<<endl;
+                cout<< "Invalid Input! Numinator can't be zero."<<endl;
                 cout<< "BYE!";
                 return 0;
             }

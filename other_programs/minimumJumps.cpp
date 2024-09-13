@@ -5,7 +5,7 @@ using namespace std;
 class minimumJumps
 {
 private:
-    /* data */
+    /* val */
 public:
     minimumJumps(/* args */);
     int minJumps(int arr[], int n) {

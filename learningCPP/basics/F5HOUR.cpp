@@ -5,7 +5,7 @@ int add(int a , int b) {
 }
 
 int main() {
-    int z ; // variables may contain random garbage dataue. WARNING.
+    int z ; // variables may contain random garbage value. WARNING.
     // may get initialize to 1, i.e z = 1
     // int y {}; // initialize to zero
     // int a {2};

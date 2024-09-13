@@ -5,10 +5,10 @@ using namespace std;
 // Creating a node.
 struct Node
 {
-    int data;
+    int val;
     Node* next;
-    Node(int data_param, Node* p_next_param) : data(data_param), next(p_next_param){};
-    Node(int data_param) : data(data_param), next(NULL){};
+    Node(int val_param, Node* p_next_param) : val(val_param), next(p_next_param){};
+    Node(int val_param) : val(val_param), next(NULL){};
 };
 
 void convertArr2LL(Node*& head, vector<int>& arr) {
@@ -25,7 +25,7 @@ void convertArr2LL(Node*& head, vector<int>& arr) {
 void printList(Node* head) {
     Node* curr_node = head;
     while(curr_node != nullptr) {
-        cout<< curr_node ->data << " ";
+        cout<< curr_node ->val << " ";
         curr_node = curr_node -> next;
     }
 }
@@ -38,7 +38,7 @@ Node* add_twoLL_MywWay(Node* head1, Node* head2) {
     int rem = 0; // carry
     int sum = 0;
     while(temp1!= nullptr && temp2 != nullptr) {
-        sum = temp2->data + temp1 -> data + rem;
+        sum = temp2->val + temp1 -> val + rem;
         rem = sum / 10;
         sum = sum % 10;
         Node* resNode = new Node(sum, nullptr);
@@ -57,7 +57,7 @@ Node* add_twoLL_MywWay(Node* head1, Node* head2) {
 
 
     while(temp1!= nullptr) {
-        sum = temp1->data + rem;
+        sum = temp1->val + rem;
         rem = sum / 10;
         sum = sum % 10;
         Node* resNode = new Node(sum, nullptr);
@@ -70,7 +70,7 @@ Node* add_twoLL_MywWay(Node* head1, Node* head2) {
 
     }
     while(temp2!= nullptr) {
-        sum = temp2->data + rem;
+        sum = temp2->val + rem;
         rem = sum / 10;
         sum = sum % 10;
         
@@ -100,8 +100,8 @@ Node* striver_add(Node* head1, Node* head2) {
 
     while(temp1!=NULL || temp2!=NULL) {
         int sum = carry;
-        if(temp1) sum += temp1 -> data;
-        if(temp2) sum += temp2 -> data;
+        if(temp1) sum += temp1 -> val;
+        if(temp2) sum += temp2 -> val;
         Node* newNode = new Node(sum % 10);
         carry = sum / 10;
         curr -> next = newNode;

@@ -4,15 +4,15 @@ using namespace std;
 
 struct Node
 {
-    int data;
+    int val;
     Node* next;
     Node* back;
 
-    Node(int data_p, Node* next_p, Node* back_p): 
-    data(data_p), next(next_p),  back(back_p){}
+    Node(int val_p, Node* next_p, Node* back_p): 
+    val(val_p), next(next_p),  back(back_p){}
 
-    Node(int data_p):
-    data(data_p), next(nullptr), back(nullptr){};
+    Node(int val_p):
+    val(val_p), next(nullptr), back(nullptr){};
 };
 
 Node* convertArr2DLL(vector<int> &arr) {
@@ -29,7 +29,7 @@ Node* convertArr2DLL(vector<int> &arr) {
 void printdll(Node* head) {
     while (head!=NULL)
     {
-        cout<< head -> data <<" ";
+        cout<< head -> val <<" ";
         head = head -> next;
     }
     

@@ -5,9 +5,9 @@ using namespace std;
 // Creating a node.
 struct Node
 {
-    int data;
+    int val;
     Node* next;
-    Node(int data) : data(data), next(nullptr){};
+    Node(int val) : val(val), next(nullptr){};
 };
 /*
 Node*:
@@ -17,13 +17,13 @@ Node*&:
 Node*& is a reference to a Node* pointer. This means that head is a reference 
 to a pointer to a Node.
 Using a reference to a pointer allows functions to modify the actual pointer 
-itself (not just the data it points to). This is useful when you want to update 
+itself (not just the val it points to). This is useful when you want to update 
 the pointer (e.g., to point to a new node) and have that change reflect outside 
 the function.
 */
 /*
-void insertAtHead(Node* head, int data) {
-    Node* newNode = new Node(data);
+void insertAtHead(Node* head, int val) {
+    Node* newNode = new Node(val);
     newNode->next = head;
     head = newNode;  <<<<>>>>// This will not change the caller's head pointer
 }
@@ -41,14 +41,14 @@ void convertArr2LL(Node*& head, vector<int>& arr) {
     }
 }
 // Adding node at the beginning.
-void insertAtHead(Node*& head, int data) {
-    Node* newNode = new Node(data);
-    newNode -> data = data;
+void insertAtHead(Node*& head, int val) {
+    Node* newNode = new Node(val);
+    newNode -> val = val;
     head = newNode;
 }
 // Adding a node at end of the ll.  
-void insertAtTail(Node*& head, int data) {
-    Node* newNode = new Node(data);
+void insertAtTail(Node*& head, int val) {
+    Node* newNode = new Node(val);
     if(head == nullptr) {
         head = newNode;
         return;
@@ -61,8 +61,8 @@ void insertAtTail(Node*& head, int data) {
 }
 
 // Inserting a node.
-void insertAtPosition(Node*& head, int data, int position) {
-    Node* newNode = new Node(data);
+void insertAtPosition(Node*& head, int val, int position) {
+    Node* newNode = new Node(val);
     if(position == 0) {
         newNode->next = head;
         head = newNode;
@@ -116,7 +116,7 @@ void deleteAtTail(Node*& head) {
 void printList(Node* head) {
     Node* curr_node = head;
     while(curr_node != nullptr) {
-        cout<< curr_node ->data << " ";
+        cout<< curr_node ->val << " ";
         curr_node = curr_node -> next;
     }
 }

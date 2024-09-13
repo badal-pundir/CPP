@@ -4,7 +4,7 @@ using namespace std;
 class gcd
 {
 private:
-    /* data */
+    /* val */
 public:
     int find_gcd(int a, int b) {
         

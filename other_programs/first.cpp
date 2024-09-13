@@ -7,7 +7,7 @@ int main(){
 
   // int x, y;
   // cin >> x >> y;
-  // cout << "dataue of X & Y are: " << x << ", " << y << endl;
+  // cout << "value of X & Y are: " << x << ", " << y << endl;
   
   // string name;
   // getline(cin, name);
@@ -19,7 +19,7 @@ int main(){
   // int n = 9;
   // cin >> n;
   // string message;
-  // message = (n < 0) ? "Negative Number" : ((n > 0)? "Posive Number" : "Null dataue");
+  // message = (n < 0) ? "Negative Number" : ((n > 0)? "Posive Number" : "Null value");
   // cout << message;
   // // if (n > 0)
   //   cout << "Positive Number";
@@ -57,7 +57,7 @@ int main(){
   //   break;
   // default:
   //   cout << "Wrong day Entered";
-  // // cout << " Indataid number:"
+  // // cout << " Invalid number:"
   // }     
 
   // 1-D array 

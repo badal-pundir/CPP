@@ -21,8 +21,8 @@ int main() {
     int class_sizes[] {10, 12, 15, 11, 18, 17};
     // will print this with a range based for loop
     cout<< endl<< "---------------------------";
-    for(auto dataue: class_sizes) {
-        cout<<"vlaue:" << dataue << endl;
+    for(auto value: class_sizes) {
+        cout<<"vlaue:" << value << endl;
     }
 
     //std::cout<<size(arr)

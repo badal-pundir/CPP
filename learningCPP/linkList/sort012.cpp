@@ -3,10 +3,10 @@ using namespace std;
 
 struct Node
 {   
-    int data;
+    int val;
     Node* next;
-    Node(int para_data, Node* next_param) : data(para_data), next(next_param){};
-    Node(int para_data):data(para_data){};
+    Node(int para_val, Node* next_param) : val(para_val), next(next_param){};
+    Node(int para_val):val(para_val){};
 };
 
 void convertArr2LL(Node*& head, vector<int>& arr) {
@@ -23,7 +23,7 @@ void convertArr2LL(Node*& head, vector<int>& arr) {
 void printList(Node* head) {
     Node* curr_node = head;
     while(curr_node != nullptr) {
-        cout<< curr_node ->data << " ";
+        cout<< curr_node ->val << " ";
         curr_node = curr_node -> next;
     }
 }
@@ -38,9 +38,9 @@ Node* sort012( Node* &head) {
     
     while (temp!= nullptr)
     {   
-        int temp_data = temp -> data;
-        if(temp_data  == 0) count0++;
-        else if(temp_data  == 1)count1 ++;
+        int temp_val = temp -> val;
+        if(temp_val  == 0) count0++;
+        else if(temp_val  == 1)count1 ++;
         else count2++;
 
         temp = temp -> next;
@@ -51,16 +51,16 @@ Node* sort012( Node* &head) {
     temp = head;
     
     while(count0) {
-        temp->data = 0;
+        temp->val = 0;
         temp = temp -> next;
         count0--;
     }
     while(count1-- > 0) {
-        temp->data = 1;
+        temp->val = 1;
         temp = temp -> next;
     }
     while(count2-- > 0) {
-        temp->data = 2;
+        temp->val = 2;
         temp = temp -> next;
     }
     */
@@ -76,11 +76,11 @@ Node* sort012( Node* &head) {
     Node* temp = head;
 
     while(temp != nullptr) {
-        if(temp -> data == 0){
+        if(temp -> val == 0){
             zero -> next = temp;
             zero = zero -> next;
         }
-        else if(temp -> data == 1) {
+        else if(temp -> val == 1) {
             one -> next = temp;
             one = one -> next;
         }
@@ -104,7 +104,7 @@ Node* sort012( Node* &head) {
 }
 int main() {
     vector<int> arr = {0,0,0};
-    // Node* head = new Node(data,  nullptr);
+    // Node* head = new Node(val,  nullptr);
     
     Node* head = nullptr;
     convertArr2LL(head, arr);

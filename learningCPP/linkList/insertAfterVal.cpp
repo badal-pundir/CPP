@@ -4,9 +4,9 @@ using namespace std;
 
 struct Node
 {
-    int data;
+    int val;
     Node* next = nullptr;
-    Node(int data_param, Node* next_param) : data(data_param), next(next_param) {};
+    Node(int val_param, Node* next_param) : val(val_param), next(next_param) {};
 };
 
 
@@ -21,11 +21,11 @@ void convertArr2LL(Node*& head, vector<int>& arr) {
     }
 }
 
-void insertAfterdataue(Node*& head, int el, int data) {
+void insertAftervalue(Node*& head, int el, int val) {
     if(head == NULL) {
         return;
     }
-    if(head -> data == data) {
+    if(head -> val == val) {
         Node* temp = new Node(el, nullptr); // it will be the last node;
         head -> next = temp;
         return;
@@ -34,39 +34,39 @@ void insertAfterdataue(Node*& head, int el, int data) {
     Node* temp = head;
 
     while(temp -> next != NULL) {
-        if(temp -> data == data) {
+        if(temp -> val == val) {
             Node* x = new Node(el,temp -> next);
             temp -> next = x;
             break;
         }
         temp = temp -> next;
     }
-    if(temp -> data == data) { // if dataue is at last node.
+    if(temp -> val == val) { // if value is at last node.
         Node* x = new Node(el, nullptr);
         temp -> next = x;
         return;
     }
-    cout<<"entered dataue is not in the list";
+    cout<<"entered value is not in the list";
 }
 
 void printList(Node* head) {
     Node* curr_node = head;
     while(curr_node != nullptr) {
-        cout<< curr_node ->data << " ";
+        cout<< curr_node ->val << " ";
         curr_node = curr_node -> next;
     }
 }
 int main() {
     vector<int> arr = {1, 2, 3, 5};
-    // Node* head = new Node(data,  nullptr);
+    // Node* head = new Node(val,  nullptr);
     
     Node* head = nullptr;
     convertArr2LL(head, arr);
     cout<< "Before: ";
     printList(head);
     cout<< "\nAfter inserting 4 after 3: ";
-    // insert element 4 after dataue 3.
-    insertAfterdataue(head, 4, 5);
+    // insert element 4 after value 3.
+    insertAftervalue(head, 4, 5);
     printList(head);
 
 

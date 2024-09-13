@@ -4,7 +4,7 @@ using namespace std;
 class lcm
 {
 private:
-    /* data */
+    /* val */
     int hcf;
     int a, b;
     

@@ -5,13 +5,13 @@ using namespace std;
 // Creating a node.
 struct Node
 {
-    int data;
+    int val;
     Node* next;
-    Node(int data) : data(data), next(nullptr){};
+    Node(int val) : val(val), next(nullptr){};
 };
 
 void deleteEl( Node*& head, int el) {
-    if(head -> data == el) {
+    if(head -> val == el) {
         Node* temp = head;
         head = head -> next;
         free(temp);
@@ -21,7 +21,7 @@ void deleteEl( Node*& head, int el) {
     Node* prev = nullptr;
 
     while(temp != nullptr) {
-        if(temp -> data == el) {
+        if(temp -> val == el) {
             prev -> next = prev -> next -> next;
             free(temp);
             break;
@@ -78,13 +78,13 @@ void convertArr2LL(Node*& head, vector<int>& arr) {
 void printList(Node* head) {
     Node* curr_node = head;
     while(curr_node != nullptr) {
-        cout<< curr_node ->data << " ";
+        cout<< curr_node ->val << " ";
         curr_node = curr_node -> next;
     }
 }
 int main() {
     vector<int> arr = {1, 2, 3, 4, 5};
-    // Node* head = new Node(data,  nullptr);
+    // Node* head = new Node(val,  nullptr);
     
     Node* head = nullptr;
     convertArr2LL(head, arr);
@@ -96,7 +96,7 @@ int main() {
     // printList(head);
 
     deleteEl(head, 2);
-    cout<< "Deleting node having data(2) position:\n";
+    cout<< "Deleting node having val(2) position:\n";
     printList(head);
 
     return 0;

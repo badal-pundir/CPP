@@ -5,15 +5,15 @@ using namespace std;
 // Creating a node.
 struct Node
 {
-    int data;
+    int val;
     Node* next;
-    Node(int data_param, Node* p_next_param) : data(data_param), next(p_next_param){};
+    Node(int val_param, Node* p_next_param) : val(val_param), next(p_next_param){};
 };
 
 int findMiddelEl(Node* head) {
     int count = 0;
     if(head -> next == nullptr) {
-        return head -> data;
+        return head -> val;
     }
     Node* mover = head;
     while(mover != nullptr) {
@@ -27,7 +27,7 @@ int findMiddelEl(Node* head) {
         mover_2 = mover_2 -> next;
         i++;
     }
-    return mover_2 -> data;
+    return mover_2 -> val;
 
 }
 
@@ -49,7 +49,7 @@ int findMiddleEl_2pointer(Node* head) {
     }
 
     // slow will be pointing to the second middle middle element in case of even number of nodes head fast will point to nullptr i.e endo of ll.
-    return fast? slow->data : prev -> data;
+    return fast? slow->val : prev -> val;
 }
 
 void convertArr2LL(Node*& head, vector<int>& arr) {
@@ -66,13 +66,13 @@ void convertArr2LL(Node*& head, vector<int>& arr) {
 void printList(Node* head) {
     Node* curr_node = head;
     while(curr_node != nullptr) {
-        cout<< curr_node ->data << " ";
+        cout<< curr_node ->val << " ";
         curr_node = curr_node -> next;
     }
 }
 int main() {
     vector<int> arr = {1, 2, 3, 4};
-    // Node* head = new Node(data,  nullptr);
+    // Node* head = new Node(val,  nullptr);
     
     Node* head = nullptr;
     convertArr2LL(head, arr);

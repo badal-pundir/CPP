@@ -4,10 +4,10 @@ using namespace std;
 
 struct Node 
 {
-    int data;
+    int val;
     Node* next = nullptr;
-    Node(int data_param){
-        data = data_param;
+    Node(int val_param){
+        val = val_param;
         next = nullptr;
     }
 };
@@ -36,7 +36,7 @@ void convertArr2LL(Node*& head, vector<int>& arr) {
 
 int main() {
     vector<int> arr = {1, 2, 3, 4, 5};
-    // Node* head = new Node(data,  nullptr);
+    // Node* head = new Node(val,  nullptr);
     
     Node* head = nullptr;
     convertArr2LL(head, arr);

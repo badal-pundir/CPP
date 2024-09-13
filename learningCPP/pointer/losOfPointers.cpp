@@ -3,16 +3,16 @@ using namespace std;
 
 int main()
 {
-    // int* data = new int[10000000000000];
+    // int* val = new int[10000000000000];
     /*
         for(size_t i{0}; i< 100000; ++i) {
-            int* data = new int[100000000];
+            int* val = new int[100000000];
         }
     */
     /*
         for(size_t i{0}; i< 100000; ++i) {
             try {
-                int* data = new int[100000000];
+                int* val = new int[100000000];
 
                 }catch(exception& ex){
                     cout<<"Something went wrong "<< ex.what()<<endl;
@@ -24,9 +24,9 @@ int main()
     // SECOND METHOD TO HANDLING ERROR.
     /*
         for(size_t i{0}; i< 100000; ++i) {
-            int* data = new(std::nothrow) int[100000000];
+            int* val = new(std::nothrow) int[100000000];
 
-            if(data == nullptr) {
+            if(val == nullptr) {
                 cout<<"Memory allocation failed";
                 break;
             }else {
@@ -40,13 +40,13 @@ int main()
 
     p_number = new int();
     *p_number = 23;   // OR p_number = new int(23) would have worked same
-    if (p_number) // --> equadataent if(!(p_number == nullptr))
+    if (p_number) // --> equavalent if(!(p_number == nullptr))
     {
-        cout << "p_number points to a dataID address: " << p_number <<" dataue: "<< *p_number<< endl;
+        cout << "p_number points to a valID address: " << p_number <<" value: "<< *p_number<< endl;
     }
     else
     {
-        cout << "p_number pints to an INdataID address." << endl;
+        cout << "p_number pints to an INvalID address." << endl;
     }
 
     delete p_number;

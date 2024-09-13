@@ -16,7 +16,7 @@ int main() {
 
     // int *p_number = &int_var;
 
-    cout<< "dataue: "<< *p_number << ", memory address is: "<< p_number<<endl;
+    cout<< "value: "<< *p_number << ", memory address is: "<< p_number<<endl;
 
     (*p_fractional_number)++;
     cout<< *p_fractional_number<<endl;
@@ -39,7 +39,7 @@ the risk of memory leaks and dangling pointers.
 
 #include <memory>
 
-std::unique_ptr<int> ptr = std::make_unique<int>(10); // Initialize a unique_ptr with dataue 10
+std::unique_ptr<int> ptr = std::make_unique<int>(10); // Initialize a unique_ptr with value 10
 
 
 */

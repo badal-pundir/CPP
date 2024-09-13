@@ -5,9 +5,9 @@ using namespace std;
 // Creating a node.
 struct Node
 {
-    int data;
+    int val;
     Node* next;
-    Node(int data) : data(data), next(nullptr){};
+    Node(int val) : val(val), next(nullptr){};
 };
 
 // Deleting the node.
@@ -77,13 +77,13 @@ void convertArr2LL(Node*& head, vector<int>& arr) {
 void printList(Node* head) {
     Node* curr_node = head;
     while(curr_node != nullptr) {
-        cout<< curr_node ->data << " ";
+        cout<< curr_node ->val << " ";
         curr_node = curr_node -> next;
     }
 }
 int main() {
     vector<int> arr = {1, 2, 3, 4, 5};
-    // Node* head = new Node(data,  nullptr);
+    // Node* head = new Node(val,  nullptr);
     
     Node* head = nullptr;
     convertArr2LL(head, arr);

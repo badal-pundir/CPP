@@ -4,15 +4,15 @@ using namespace std;
 
 struct Node
 {
-    int data;
+    int val;
     Node* next;
     Node* back;
 
-    Node(int data_p, Node* next_p, Node* back_p): 
-    data(data_p), next(next_p),  back(back_p){}
+    Node(int val_p, Node* next_p, Node* back_p): 
+    val(val_p), next(next_p),  back(back_p){}
 
-    Node(int data_p):
-    data(data_p), next(nullptr), back(nullptr){};
+    Node(int val_p):
+    val(val_p), next(nullptr), back(nullptr){};
 };
 
 Node* convertArr2DLL(vector<int> &arr) {
@@ -29,21 +29,21 @@ Node* convertArr2DLL(vector<int> &arr) {
 void printdll(Node* head) {
     while (head!=NULL)
     {
-        cout<< head -> data <<" ";
+        cout<< head -> val <<" ";
         head = head -> next;
     }
     
 }
 // insert before pos/
-void insertBeforeKth(Node*& head, int data, int pos) {
+void insertBeforeKth(Node*& head, int val, int pos) {
     if(pos == 1){
-        Node* newNode = new Node(data,head,nullptr);
+        Node* newNode = new Node(val,head,nullptr);
         head -> back = newNode;
         head = newNode;
         return;
     }
     int count = 1;
-    // Node* newNode = new Node(data);
+    // Node* newNode = new Node(val);
     Node* mover = head;
     while(mover != nullptr) {
         count++;
@@ -55,7 +55,7 @@ void insertBeforeKth(Node*& head, int data, int pos) {
         return;
     }
     Node* prev = mover -> back;
-    Node* newNode = new Node(data, mover, prev);
+    Node* newNode = new Node(val, mover, prev);
     prev -> next = newNode;
     newNode -> back = prev;
     newNode -> next = mover;
