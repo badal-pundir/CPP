@@ -6,13 +6,13 @@ using namespace std;
 class StackNode
 {
     public:
-        int data;
+        int val;
         StackNode* next;
 };
 
-StackNode* newNode(int data){
+StackNode* newNode(int val){
     StackNode* stackNode = new StackNode();
-    stackNode -> data = data;
+    stackNode -> val = val;
     stackNode -> next = NULL;
     return stackNode;
 }
@@ -21,10 +21,10 @@ bool isEmpty(StackNode* root){
     return !root;
 }
 
-void push(StackNode** root, int data) {
-    StackNode* stackNode = newNode(data);
+void push(StackNode** root, int val) {
+    StackNode* stackNode = newNode(val);
     stackNode -> next = *root;
-    cout<< data<< " pushed to stack\n";
+    cout<< val<< " pushed to stack\n";
 }
 
 int pop(StackNode** root){
@@ -33,7 +33,7 @@ int pop(StackNode** root){
     }
     StackNode* temp = *root;
     *root = (*root) -> next;
-    int popped = temp -> data;
+    int popped = temp -> val;
     free(temp);
 
     return popped;
@@ -42,7 +42,7 @@ int peek(StackNode* root){
     if(isEmpty(root)){
         return INT_MIN;
     }
-    return root -> data;
+    return root -> val;
 }
 
 int main() {
