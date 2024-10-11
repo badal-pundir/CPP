@@ -95,7 +95,7 @@ int main() {
     cout<< "After: ";
     // printList(head);
 
-    deleteEl(head, 2);
+    deleteEl(head, 5);
     cout<< "Deleting node having val(2) position:\n";
     printList(head);
 
