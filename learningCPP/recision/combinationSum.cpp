@@ -1,9 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void printAllComb(vector<int> arr, int st,  int r, vector<int> newlist, vector< vector<int>> &ans) {
+void printAllComb(vector<int> arr, int st,  int target, vector<int> newlist, vector< vector<int>> &ans) {
     // base condition
-    if(r == 0){
+    if(target == 0){
         // cout<<"[";
         // for(auto &it: newlist) cout<< it << " ";
         // cout<<"]";
@@ -19,17 +19,18 @@ void printAllComb(vector<int> arr, int st,  int r, vector<int> newlist, vector< 
     // main coding
     for(int i = st; i < static_cast<int>(arr.size()); i++) {
         newlist.push_back(arr[i]);
-        printAllComb(arr,i + 1,  r - arr[i], newlist, ans);
+        printAllComb(arr,i + 1,  target - arr[i], newlist, ans);
     	newlist.pop_back();
     }
 }
 int main() {
-    vector<int> arr = {1, 2, 3, 4};
-    int r = 2;
+    vector<int> arr = {1, 1, 3, 2, 2};
+    int target = 4;
+    sort(arr.begin(), arr.end());
     // int newsize = 2 * 3;
     vector<vector<int>> ans;
     vector<int> newlist;
-    printAllComb(arr,0, r, newlist, ans);
+    printAllComb(arr,0, target, newlist, ans);
     for(auto& it: ans) {
             for(int i = 0 ;  i < static_cast<int>(it.size()) ; i++)
                 cout<< it[i];
