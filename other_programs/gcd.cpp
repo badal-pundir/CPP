@@ -34,5 +34,5 @@ int main() {
     // int a = 5;
     // int b = 6;
     gcd ob;
-    cout<< ob.find_gcd(36 ,18);
+    cout<< ob.find_gcd(17, 3);
 }
