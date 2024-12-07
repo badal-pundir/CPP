@@ -1,7 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void printAllComb(vector<int> arr, int st,  int target, vector<int> newlist, vector< vector<int>> &ans) {
+void printAllComb(vector<int> arr, int st, 
+    int target, vector<int> newlist, 
+    vector< vector<int>> &ans
+    ) {
     // base condition
     if(target == 0){
         // cout<<"[";
