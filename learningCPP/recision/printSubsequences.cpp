@@ -31,8 +31,8 @@ int main() {
     // Printing result
 
     for(auto vec: result) {
-        for(auto ele: vec) {
-            cout<< ele<< " ";
+        for(auto el: vec) {
+            cout<< el<< " ";
         }
         cout<<"\n";
     }

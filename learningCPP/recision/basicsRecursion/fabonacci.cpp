@@ -11,6 +11,8 @@ int fab(int n) {
     return fab(n - 1) + fab(n - 2); // TC ~ O(2^n)
 }
 int main() {
-    cout<< fab(4);
+    // cout<< 1;
+    for(int i = 1 ; i< 10; i++)
+        cout<<" "<< fab(i);
     return 0;
 }
